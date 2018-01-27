@@ -9,7 +9,7 @@ Crear un servidor FTP:
   
   - [FileZilla](https://filezilla-project.org/)
   
-  - [Pasos](https://informaticapc.com/guias-instalacion-programas/servidor-ftp-filezilla.php)
+  - [Guia_servidor_ftp](https://informaticapc.com/guias-instalacion-programas/servidor-ftp-filezilla.php)
 
 Composer install
 
