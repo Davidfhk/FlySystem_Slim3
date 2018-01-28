@@ -11,7 +11,7 @@ Crear un servidor FTP:
   
   - [Guia_servidor_ftp](https://informaticapc.com/guias-instalacion-programas/servidor-ftp-filezilla.php)
   
-  Yo le he introducido como 
+  Yo lo he creado como:
   
      usuario: test
      password: 1234
@@ -25,7 +25,7 @@ Crear un servidor FTP:
 
 Composer install
 
-El archivo que se sube a FTP es la carpeta FTP de la aplicación donde se encuantra el txt.
+El archivo que se sube a FTP es la carpeta FTP de la aplicación donde se encuantre el txt.
 
 El txt de FTP yo lo he llamado hello.txt, aunque le puedes poner cualquiera, y cambiarlo respectivamente en el FlysystemModel
 
