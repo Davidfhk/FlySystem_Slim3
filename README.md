@@ -45,7 +45,7 @@ Ejemplo petición PUT:
       "newContent":"Este archivo está actualizado"
     }
 
-  Se te modificara con el nuevo texto el contenido del archivo que tienes en FTP
+  Se te modificara con el nuevo texto, el contenido del archivo que tienes en FTP
 
 Ejemplo petición DELETE:
 
