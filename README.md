@@ -25,20 +25,32 @@ Crear un servidor FTP:
 
 Composer install
 
-El archivo que se sube a FTP es la carpeta FTP de la aplicación donde se encuantre el txt.
+El archivo que se sube a FTP es la carpeta FTP de la aplicación donde se encuentra el txt.
 
-El txt de FTP yo lo he llamado hello.txt, aunque le puedes poner cualquiera, y cambiarlo respectivamente en el FlysystemModel
+El txt de FTP yo lo he llamado hello.txt, aunque le puedes poner cualquier nombre. Pero recuerda añadir el nombre correctamente en el "fileFtp":  , del JSON
 
-    public function getFile(){
+Ejemplo petición POST:
 
-        $this->contents= $this->manager->read('ftp://hello.txt');
+    {
+      "fileFtp":"hello.txt",
+      "fileLocal":"newHello.txt"
+    }
+    
+  El txt con el contenido se te creara dentro de la carpeta App
+
+Ejemplo petición PUT:
+
+    {
+      "fileFtp":"hello.txt",
+      "newContent":"Este archivo está actualizado"
     }
 
-Lo mismo para el txt destino que quieres que se cree, con el contenido del txt del FTP, lo he llamado tambien hello.txt
+  Se te modificara con el nuevo texto el contenido del archivo que tienes en FTP
 
-    public function writeLocalFile(){
-        
-        $this->manager->write('local://hello.txt', $this->contents);
+Ejemplo petición DELETE:
+
+    {
+	    "fileFtp":"hello.txt"
     }
-
-Una vez se ejecuta la aplicación, el txt con el contenido se te creara dentro de la carpeta App
+  
+  Eliminara el fichero que tienes en FTP
