@@ -29,6 +29,8 @@ Crear un servidor FTP:
 
   - Realizar un [composer](https://getcomposer.org/) install
 
+### Guia de uso
+
 El archivo que se sube a FTP es la carpeta FTP de la aplicación donde se encuentra el txt.
 
 El txt de FTP yo lo he llamado hello.txt, aunque le puedes poner cualquier nombre. Pero recuerda añadir el nombre correctamente en el "fileFtp":  , del JSON
