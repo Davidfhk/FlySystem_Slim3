@@ -1,4 +1,8 @@
 <?php
 
+$app->group('/flysystem', function(){
 
-$app->get('/flysystem', 'FlysystemController:readWrite');
+	$this->post('','FlysystemController:readWrite');
+	$this->put('','FlysystemController:updateContent');
+})->add('CheckFileMw');
+
