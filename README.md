@@ -1,7 +1,11 @@
 # FlySystem_Slim3
 Ejemplo basico de la implementación de [FlySystem](https://flysystem.thephpleague.com/) en [Slim 3](https://www.slimframework.com/)
 
-Leyendo un archivo por FTP y escribiendolo en local
+### ¿Qué hace FlySystem_Slim3?
+
+##### Leer un archivo por FTP y escribir su contenido en un archivo en Local
+##### Actualizar el contenido del archivo que está en FTP 
+##### Eliminar el archivo de FTP
 
 ### Requisitos
 
