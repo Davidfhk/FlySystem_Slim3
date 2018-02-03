@@ -67,6 +67,16 @@ class FlysystemController
         }
     }
 
+    public function deleteFileFtp(Request $request, Response $response, $args)
+    {
+        if($this->checkFileFtp($request,$response, $args))
+        {
+            
+            $this->model->deleteFileFtp($this->payload['fileFtp']);
+        
+        } 
+    }
+
 /*****CHECKS*******/
 
     public function checkFileFtp(Request $request, Response $response, $args)
