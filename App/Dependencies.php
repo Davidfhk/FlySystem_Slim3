@@ -52,3 +52,12 @@ $container['AdapterFtp'] = function($c){
         $c['ServiceSettings']['ftp']
     );
 };
+
+/*----------------MIDDLEWARE---------------------*/
+
+$container['CheckFileMw'] = function($c){
+
+    return new App\flysystemws\Middleware\CheckFile(
+        $c['Manager']
+        );
+};
