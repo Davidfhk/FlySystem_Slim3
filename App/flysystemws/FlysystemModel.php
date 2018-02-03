@@ -31,13 +31,23 @@ class FlysystemModel
         $this->manager = $manager;
     }
     
-    public function getFile(){
+    public function getFile($fileFtp){
 
-        $this->contents= $this->manager->read('ftp://hello.txt');
+        $this->contents= $this->manager->read('ftp://'.$fileFtp);
     }
     
-    public function writeLocalFile(){
+    public function writeLocalFile($fileLocal){
         
-        $this->manager->write('local://hello.txt', $this->contents);
+        $this->manager->write('local://'.$fileLocal, $this->contents);
+
+        echo "El contenido se te ha escrito con exito en el archivo ".$fileLocal;
     }
+
+    public function updateContent($fileFtp,$newContent){
+
+        $this->manager->update('ftp://'.$fileFtp,$newContent);
+
+        echo "El contenido se ha actualizado con exito por ".$newContent;
+    }
+
 }
