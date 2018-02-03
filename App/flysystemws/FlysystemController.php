@@ -18,6 +18,11 @@ class FlysystemController
     private $model;
 
     /**
+     * @var Array
+     */
+    private $payload;
+
+    /**
      * Creates the Controller
      *
      * @param Model $model Service functions
@@ -29,8 +34,63 @@ class FlysystemController
         $this->model = $model;
     }
     
-    public function readWrite() {
-        $this->model->getFile();
-        $this->model->writeLocalFile();
+    public function readWrite(Request $request, Response $response, $args)
+    {
+
+        if($this->checkFileFtp($request,$response, $args))
+        {
+
+            $this->model->getFile($this->payload['fileFtp']);
+
+            if($this->checkFileLocal())
+            {
+                $this->model->writeLocalFile($this->payload['fileLocal']);
+            }
+             
+        }
+
+
+    }
+
+    public function updateContent(Request $request, Response $response, $args)
+    {
+        if($this->checkFileFtp($request,$response, $args))
+        {
+            if(!isset($this->payload['newContent']) || $this->payload['newContent'] == "")
+            {
+                echo "Por favor, introduzca el nuevo contenido";
+            }else{
+
+                $this->model->updateContent($this->payload['fileFtp'],$this->payload['newContent']);
+            }
+        
+        }
+    }
+
+/*****CHECKS*******/
+
+    public function checkFileFtp(Request $request, Response $response, $args)
+    {
+        $this->payload = $request->getParsedBody();
+
+        if(!$this->payload['fileFtp'])
+        {
+            echo "El nombre del archivo no existe";
+        }else{
+
+            return true; 
+        }
+
+    }
+
+    public function checkFileLocal()
+    {
+        if(!isset($this->payload['fileLocal']) || $this->payload['fileLocal'] == "")
+        {
+            echo "Por favor introduzca el nombre del archivo donde quiere que se le copie el contenido";
+        }else{
+
+            return true; 
+        }
     }
 }
