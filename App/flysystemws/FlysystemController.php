@@ -1,6 +1,6 @@
 <?php
 /**
- * @author David Ignacio Martos>
+ * @author David Ignacio Martos
  * @version 1.0.0
  */
 
